@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Создать стол</title>
+    <title>Создать официанта</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
     <link rel="stylesheet"
@@ -37,17 +37,19 @@
                 <div class="card border-0 shadow">
                     <div class="card-body">
                         <div th:if="${param.success}">
-                            <div class="alert alert-info">Стол успешно добвлен!</div>
+                            <div class="alert alert-info">Официант успешно добвлен!</div>
                         </div>
                         <div class="text-center mt-3">
-                            <h3 class="mb-5">Добавить Стол</h3>
+                            <h3 class="mb-5">Добавить Официанта</h3>
                         </div>
-                        <form action="#" th:action="@{/tables/saveTable}" th:object="${table}"
+                        <form action="#" th:action="@{/waiters/saveWaiter}" th:object="${waiter}"
                               method="POST">
-                            <input type="number" th:field="*{countPlaces}"
-                                   style="margin-top: 10px;" placeholder="Количество мест" class="form-control">
-                            <input type="number" th:field="*{bookingAmount}"
-                                   style="margin-top: 10px;" placeholder="Стоимость брони" class="form-control">
+                            <input type="text" th:field="*{name}"
+                                   style="margin-top: 10px;" placeholder="Имя" class="form-control">
+                            <input type="text" th:field="*{phone}"
+                                   style="margin-top: 10px;" placeholder="Телефон" class="form-control">
+                            <input type="password" th:field="*{password}"
+                                   style="margin-top: 10px;" placeholder="Пароль" class="form-control">
                             <div class="text-center mt-3">
                                 <button class="btn btn-primary">Сохранить</button>
                             </div>
@@ -58,7 +60,7 @@
         </div>
         <hr>
 
-        <a th:href="@{/tables}" class="text-center text-primary"> Вернуться назад</a>
+        <a th:href="@{/waiters}" class="text-center text-primary"> Вернуться назад</a>
     </div>
 </section>
 <!-- Option 1: Bootstrap Bundle with Popper -->

@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface WaiterRepository extends JpaRepository<Waiter, Long> {
+    Waiter findWaiterById(long id);
 }
