@@ -24,4 +24,9 @@ public class ClientServiceImpl implements ClientService{
         );
         return clientRepository.save(newClient);
     }
+
+    @Override
+    public Client findClientByPhone(String phone) {
+        return clientRepository.findClientByPhone(phone);
+    }
 }

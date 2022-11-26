@@ -58,4 +58,9 @@ public class WaiterServiceImpl implements WaiterService{
         return waiterRepository.findWaiterById(id);
     }
 
+    @Override
+    public Waiter getWaiterByPhone(String phone) {
+        return waiterRepository.findWaiterByPhone(phone);
+    }
+
 }

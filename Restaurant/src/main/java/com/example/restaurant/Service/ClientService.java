@@ -5,4 +5,5 @@ import com.example.restaurant.models.Client;
 
 public interface ClientService {
     Client save(UserRegistrationDto client);
+    Client findClientByPhone(String phone);
 }

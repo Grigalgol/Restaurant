@@ -23,6 +23,6 @@ public class Tables {
         this.bookingAmount = bookingAmount;
     }
 
-    @OneToMany(fetch=FetchType.EAGER, mappedBy = "tables")
+    @OneToMany(fetch=FetchType.EAGER, mappedBy = "tables", cascade = CascadeType.REMOVE)
     private List<Order> order;
 }

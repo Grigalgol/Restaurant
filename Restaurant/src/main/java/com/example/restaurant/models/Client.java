@@ -22,6 +22,6 @@ public class Client {
         this.phone = phone;
     }
 
-    @OneToMany(fetch=FetchType.EAGER, mappedBy = "client")
+    @OneToMany(fetch=FetchType.EAGER, mappedBy = "client", cascade = CascadeType.REMOVE)
     private List<Order> order;
 }

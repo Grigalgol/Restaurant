@@ -12,4 +12,6 @@ public interface WaiterService {
     List<Waiter> getAll();
 
     Waiter getWaiterById(long id);
+
+    Waiter getWaiterByPhone(String phone);
 }

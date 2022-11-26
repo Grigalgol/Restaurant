@@ -2,11 +2,12 @@
 <html lang="ru" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"/>
 
     <title>Главная страница</title>
 </head>
@@ -15,7 +16,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <span class="navbar-brand">Шаурма от Григоряна</span>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -29,14 +31,15 @@
     </div>
 </nav>
 
-<div class="container mt-5" >
+<div class="container mt-5" sec:authorize="hasRole('ROLE_USER')">
     <div class="row">
         <div class="col-md-6">
             <div class="card text-center">
                 <div class="card-header bg-success text-white">
                     <div class="row row-cols-1">
                         <div class="col">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                                 class="bi bi-calendar" viewBox="0 0 16 16">
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                             </svg>
                         </div>
@@ -47,7 +50,7 @@
                 </div>
                 <div class="card-footer">
                     <h6>
-                        <a style="text-decoration: none;" th:href = "@{/myPayments}"class="text-primary">Перейти</a>
+                        <a style="text-decoration: none;" th:href="@{/makeOrder}" class="text-primary">Перейти</a>
                     </h6>
                 </div>
             </div>
@@ -57,7 +60,8 @@
                 <div class="card-header bg-danger text-white">
                     <div class="row row-cols-1">
                         <div class="col">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-clock-history" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                                 class="bi bi-clock-history" viewBox="0 0 16 16">
                                 <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
                                 <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
                                 <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
@@ -70,15 +74,151 @@
                 </div>
                 <div class="card-footer">
                     <h6>
-                        <a style="text-decoration: none;"th:href = "@{/myVacations}" class="text-primary">Перейти</a>
+                        <a style="text-decoration: none;" th:href="@{/myOrders}" class="text-primary">Перейти</a>
                     </h6>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
+<div class="container mt-5" sec:authorize="hasRole('ROLE_WAITER')">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-header bg-danger text-white">
+                    <div class="row row-cols-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-bag-dash" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M5.5 10a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
+                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                        </svg>
+                        <div class="col">
+                            <h4>Не начавшиеся брони</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h6>
+                        <a style="text-decoration: none;" th:href="@{/orderManagement/notStartedOrder}" class="text-primary">Перейти</a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-header bg-success text-white">
+                    <div class="row row-cols-1">
+                        <div class="col">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                            </svg>
+                        </div>
+                        <div class="col">
+                            <h4>Текущие брони</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h6>
+                        <a style="text-decoration: none;" th:href="@{/orderManagement/currentOrder}" class="text-primary">Перейти</a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-header bg-warning text-white">
+                    <div class="row row-cols-1">
+                        <div class="col">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-bag-check" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                            </svg>
+                        </div>
+                        <div class="col">
+                            <h4>Завершенные Брони</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h6>
+                        <a style="text-decoration: none;" th:href="@{/orderManagement/finishedOrder}" class="text-primary">Перейти</a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5" sec:authorize="hasRole('ROLE_ADMIN')">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-header bg-danger text-white">
+                    <div class="row row-cols-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-back" viewBox="0 0 16 16">
+                            <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"/>
+                        </svg>
+                        <div class="col">
+                            <h4>Управление столами</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h6>
+                        <a style="text-decoration: none;" th:href="@{/tables}" class="text-primary">Перейти</a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-header bg-success text-white">
+                    <div class="row row-cols-1">
+                        <div class="col">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                            </svg>
+                        </div>
+                        <div class="col">
+                            <h4>Управление официантами</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h6>
+                        <a style="text-decoration: none;" th:href="@{/waiters}" class="text-primary">Перейти</a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-header bg-warning text-white">
+                    <div class="row row-cols-1">
+                        <div class="col">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
+                                <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                <path d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z"/>
+                            </svg>
+                        </div>
+                        <div class="col">
+                            <h4>Просмотр всех заказов</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h6>
+                        <a style="text-decoration: none;" th:href="@{/admin}" class="text-primary">Перейти</a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
 </body>
 </html>

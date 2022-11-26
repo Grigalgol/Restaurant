@@ -22,6 +22,6 @@ public class Waiter {
         this.phone = phone;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "waiter")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "waiter", cascade = CascadeType.REMOVE)
     List<Order> order;
 }

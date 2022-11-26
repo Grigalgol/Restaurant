@@ -23,8 +23,7 @@ public class Order {
     @ManyToOne(fetch = FetchType.EAGER)
     private Waiter waiter;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Status status;
+    private StatusEnum status;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Tables tables;
@@ -37,4 +36,21 @@ public class Order {
             inverseJoinColumns = @JoinColumn(
                     name = "menu_id", referencedColumnName = "id"))
     private Collection<Menu> menus;
+
+    public Order(String date_order, Client client, Waiter waiter, StatusEnum status, Tables tables, Collection<Menu> menus) {
+        this.date_order = date_order;
+        this.client = client;
+        this.waiter = waiter;
+        this.status = status;
+        this.tables = tables;
+        this.menus = menus;
+    }
+    public long getTotalPrice() {
+        long totalPrice = 0;
+        totalPrice+=tables.getBookingAmount();
+        for (Menu menu : menus) {
+            totalPrice += menu.getPrice();
+        }
+        return totalPrice;
+    }
 }
